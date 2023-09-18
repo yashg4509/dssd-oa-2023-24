@@ -1,19 +1,40 @@
-import express from "express"
-import cors from "cors"
+import express from "express";
+import cors from "cors";
+import fs from "fs";
+import csv from "csv-parser";
 
-const app = express()
+const app = express();
 
 app.use(cors({
     origin: "http://localhost:5500"
-}))
+}));
 
 app.get("/", (req, res) => {
-    res.send({
-        x: [1, 2, 3],
-        y: [4, 5, 6]
-    }).status(200)
-})
+    const regionCounts = {};
 
+    // Read the CSV file and count accidents per region
+    fs.createReadStream("aircrashesFullData.csv")
+        .pipe(csv())
+        .on('data', (row) => {
+            const region = row["Country/Region"];
+            if (region) {
+                if (regionCounts[region]) {
+                    regionCounts[region]++;
+                } else {
+                    regionCounts[region] = 1;
+                }
+            }
+        })
+        .on('end', () => {
+            const data = {
+                x: Object.keys(regionCounts),
+                y: Object.values(regionCounts),
+                type: 'bar'
+            };
+            res.send(data).status(200);
+        });
+});
 
-const port = process.env.PORT || 3000
-app.listen(port, () => console.log(`server listening on port ${port} 🚀`))
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log(`server listening on port ${port} 🚀`));
+
