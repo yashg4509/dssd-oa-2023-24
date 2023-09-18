@@ -2,10 +2,14 @@ import express from "express";
 import cors from "cors";
 import fs from "fs";
 import csv from "csv-parser";
-import path from 'path'
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
-const app = express();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 const csvFilePath = path.join(__dirname, 'aircrashesFullData.csv');
+const app = express();
 
 app.use(cors({
     origin: "http://localhost:5500"
