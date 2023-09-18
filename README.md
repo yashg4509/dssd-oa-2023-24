@@ -1,7 +1,11 @@
 ## RESULTS
-I was able to get the graph to work and deploy on the local. However, for some reason, the live server on my end isn't working (I didn't have the time to fix it as I was sick :(). In case it doesn't work on the user end, I have attached an image of the graph I created below. The data is about Airplane Crashes from [Kaggle](https://www.kaggle.com/datasets/jogwums/air-crashes-full-data-1908-2023?resource=download). I graphed a bar graph of what country plane crashes happened in. I also got the chance to deploy the backend [here](https://dssd-oa-2023-2024-gupta.onrender.com/). Feel free to contact me with any questions at [ysgupta@wisc.edu](mailto:ysgupta@wisc.edu).
+I was able to get the graph to work and deploy on the local. However, for some reason, the live server on my end isn't working (I didn't have the time to fix it as I was sick :(). In case it doesn't work on the user end, I have attached an image of the graph I created below. The data is about Airplane Crashes from [Kaggle](https://www.kaggle.com/datasets/jogwums/air-crashes-full-data-1908-2023?resource=download). I graphed a bar graph of what country plane crashes happened in. I also got the chance to deploy the backend [here](https://dssd-oa-2023-2024-gupta.onrender.com/) (I have also submitted a picture of this below in case the free version of Render gives in). Feel free to contact me with any questions at [ysgupta@wisc.edu](mailto:ysgupta@wisc.edu).
 
-![bar graph](https://github.com/yashg4509/dssd-oa-2023-24/blob/main/newplot.png)
+**Graph**
+![bar graph](https://github.com/yashg4509/dssd-oa-2023-24/blob/main/images/newplot.png)
+
+**[Deployed Backend](https://dssd-oa-2023-2024-gupta.onrender.com/)**
+![backend](https://github.com/yashg4509/dssd-oa-2023-24/blob/main/images/backend.png)
 
 ## Below is the original challenge for DSSD OA 2023-2024 Assessment
 This repository has starter code that you will build on to show your skills as a developer. [Fork this repository](https://github.com/DSSD-Madison/oa-2023-24/fork) to get started on your own copy.
