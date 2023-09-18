@@ -2,8 +2,10 @@ import express from "express";
 import cors from "cors";
 import fs from "fs";
 import csv from "csv-parser";
+import path from 'path'
 
 const app = express();
+const csvFilePath = path.join(__dirname, 'aircrashesFullData.csv');
 
 app.use(cors({
     origin: "http://localhost:5500"
@@ -13,7 +15,7 @@ app.get("/", (req, res) => {
     const regionCounts = {};
 
     // Read the CSV file and count accidents per region
-    fs.createReadStream("aircrashesFullData.csv")
+    fs.createReadStream(csvFilePath)
         .pipe(csv())
         .on('data', (row) => {
             const region = row["Country/Region"];
