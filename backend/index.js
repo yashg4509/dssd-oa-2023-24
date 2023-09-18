@@ -3,6 +3,7 @@ import cors from "cors";
 import fs from "fs";
 import csv from "csv-parser";
 import { fileURLToPath } from 'url';
+import path from 'path';
 import { dirname } from 'path';
 
 const __filename = fileURLToPath(import.meta.url);
